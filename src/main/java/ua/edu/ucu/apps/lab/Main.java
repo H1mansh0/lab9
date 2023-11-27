@@ -8,13 +8,20 @@ import ua.edu.ucu.apps.lab.flowers.FlowerType;
 import ua.edu.ucu.apps.lab.flowers.Item;
 
 public class Main {
+    private final int IDONE = 1;
+    private final int IDTWO = 2;
+    private final FlowerType FLOWERTYPE = FlowerType.ROSE;
+    private final int PRICE = 90;
+    private final double SEPALLENGTH = 0.8;
+    private final FlowerColor COLOR = FlowerColor.RED;
+    
     public static void main(String[] args) {
-        Item item = new Flower(1, FlowerType.ROSE, 90, 0.8, FlowerColor.RED);
+        Item item = new Flower(IDONE, FLOWERTYPE, PRICE, SEPALLENGTH, COLOR);
         item = new DiscountDecorator(new PaperDecorator(item));
         System.out.println(item.price());
 
-        Item item2 = new Flower(2, FlowerType.ROSE, 90, 0.8, FlowerColor.RED);
-        item2 = new PaperDecorator(new DiscountDecorator(item2));
-        System.out.println(item2.price());
+        Item itemTwo = new Flower(IDTWO, FLOWERTYPE, PRICE, SEPALLENGTH, COLOR);
+        item2 = new PaperDecorator(new DiscountDecorator(itemTwo));
+        System.out.println(itemTwo.price());
     }
 }
