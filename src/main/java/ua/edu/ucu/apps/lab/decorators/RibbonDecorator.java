@@ -1,6 +1,7 @@
 package ua.edu.ucu.apps.lab.decorators;
 
 import ua.edu.ucu.apps.lab.flowers.Item;
+import lombok.Getter;
 
 @Getter
 public class RibbonDecorator extends ItemDecorator {
